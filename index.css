@@ -19,7 +19,7 @@ h2 {
 }
 h3{
     position: relative;
-    top: 100px;
+    top: px;
 }
 
 input {
@@ -39,7 +39,6 @@ div>p:first-child {
     display: inline;
     position: relative;
     top: 100px;
-    text-align: justify;
 }
 
 div img {
@@ -127,6 +126,8 @@ div:last-child {
 
 table {
     width: 60%;
+    position: relative;
+    left: 300px;
 }
 
 td button {
