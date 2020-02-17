@@ -39,6 +39,7 @@ div>p:first-child {
     display: inline;
     position: relative;
     top: 100px;
+    text-align: justify;
 }
 
 div img {
