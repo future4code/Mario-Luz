@@ -15,6 +15,11 @@ h2 {
     padding: 10px 5px 10px 5px;
     color: white;
     text-align: center;
+    position: relative;
+}
+h3{
+    position: relative;
+    top: 100px;
 }
 
 input {
@@ -32,6 +37,8 @@ img {
 
 div>p:first-child {
     display: inline;
+    position: relative;
+    top: 100px;
 }
 
 div img {
@@ -74,10 +81,15 @@ div img {
 #container-de-descricao {
     background-color: #2274a5;
     color: white;
+    display: block;
+
+    
 }
 
 #container-de-descricao>ol {
     padding: 15px 0px;
+    position: relative;
+    top: 100px;
 }
 
 #container-para-comprar {
