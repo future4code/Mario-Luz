@@ -146,10 +146,12 @@ td button:hover {
 .container-do-search {
     margin-top: 20px;
     height: 100px;
+    
+    
 }
 
 .container-do-search img:hover {
-    opacity: 30%;
+    opacity: 50%;
 }
 
 .container-do-search img:active {
@@ -165,10 +167,21 @@ td button:hover {
     font-size: 10px;
     color: black;
 }
+input.busca{
+    border-bottom: 1px solid;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    
+
+    
+    
 
 }
+
 
 #back-button:hover {
     background-color: #635a3d
     
 }
+
