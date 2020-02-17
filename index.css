@@ -4,6 +4,7 @@
   *
   **/
 
+
 * {
     margin: 0;
     padding: 0;
@@ -19,7 +20,7 @@ h2 {
 }
 h3{
     position: relative;
-    top: px;
+    top: 100px;
 }
 
 input {
@@ -126,9 +127,12 @@ div:last-child {
 }
 
 table {
-    width: 60%;
+    margin: auto;
+    width: 100%;
     position: relative;
-    left: 300px;
+    left: px;
+    text-align: center;
+    table-layout: fixed;
 }
 
 td button {
@@ -137,6 +141,7 @@ td button {
     height: 30px;
     border-radius: 5px;
     color: black;
+    
 }
 
 td button:hover {
@@ -166,6 +171,7 @@ td button:hover {
     border-radius: 5px;
     font-size: 10px;
     color: black;
+    margin: auto;
 }
 input.busca{
     border-bottom: 1px solid;
