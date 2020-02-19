@@ -1,0 +1,244 @@
+body {
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+}
+
+.containers {
+    border: solid 1px black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+#maincontainer {
+    min-height: 70em;
+    width: 90vw;
+    margin: 0 auto;
+    grid-gap: 15px;
+}
+
+
+.resto {
+    margin: auto;
+}
+
+@media screen and (min-width: 1001px) {
+#maincontainer {
+    min-height: 70em;
+    width: 90vw;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(6 1fr);
+    grid-template-rows: repeat(6 1fr);
+    
+}
+#vermelho {
+    background-color: red;
+    grid-row: 1/2;
+    grid-column: 1/7;
+}
+#amarelo2 {
+    background-color: yellow;
+    grid-row: 2/3;
+    grid-column: 3/5;
+}
+#amarelo5 {
+    background-color: yellow;
+    grid-row: 3/4;
+    grid-column: 3/5;
+}
+#azul1 {
+    background-color: blue;
+    grid-row: 2/3;
+    grid-column: 1/3;
+}
+#azul4 {
+    background-color: blue;
+    grid-row: 3/4;
+    grid-column: 1/3;
+}
+#verde3 {
+    background-color: green;
+    grid-row: 2/3;
+    grid-column: 5/7;
+}
+#verde6 {
+    background-color: green;
+    grid-row: 3/4;
+    grid-column: 5/7;
+}
+#preto7 {
+    background-color: black;
+    grid-row: 4/6;
+    grid-column: 1/4;
+    color: white;
+}
+#preto8 {
+    background-color: black;
+    grid-row: 4/6;
+    grid-column: 4/7;
+    color: white;
+}
+#branco9 {
+    background-color: white;
+    grid-row: 6/7;
+    grid-column: 1/3;
+}
+#branco10 {
+    background-color: white;
+    grid-row: 6/7;
+    grid-column: 3/5;
+}
+#branco11 {
+    background-color: white;
+    grid-row: 6/7;
+    grid-column: 5/7;
+}
+}
+
+@media screen and (max-width: 1000px) {
+    #maincontainer {
+
+        display: grid;
+        grid-template-columns: repeat(2 1fr);
+        grid-template-rows: repeat(11 1fr); 
+    }
+
+    #vermelho {
+        background-color: red;
+        grid-row: 1/2;
+        grid-column: 1/3;
+    }
+    #amarelo2 {
+        background-color: yellow;
+        grid-row: 2/3;
+        grid-column: 2/3;
+    }
+    #amarelo5 {
+        background-color: yellow;
+        grid-row: 4/5;
+        grid-column: 2/3;
+    }
+    #azul1 {
+        background-color: blue;
+        grid-row: 2/3;
+        grid-column: 1/2;
+    }
+    #azul4 {
+        background-color: blue;
+        grid-row: 4/5;
+        grid-column: 1/2;
+    }
+    #verde3 {
+        background-color: green;
+        grid-row: 3/4;
+        grid-column: 1/3;
+    }
+    #verde6 {
+        background-color: green;
+        grid-row: 5/6;
+        grid-column: 1/3;
+    }
+    #preto7 {
+        background-color: black;
+        grid-row: 6/10;
+        grid-column: 1/2;
+        color: white;
+    }
+    #preto8 {
+        background-color: black;
+        grid-row: 6/10;
+        grid-column: 2/3;
+        color: white;
+    }
+    #branco9 {
+        background-color: white;
+        grid-row: 10/11;
+        grid-column: 1/2;
+    }
+    #branco10 {
+        background-color: white;
+        grid-row: 10/11;
+        grid-column: 2/3;
+    }
+    #branco11 {
+        background-color: white;
+        grid-row: 11/12;
+        grid-column: 1/3;
+    }
+    
+}
+
+@media screen and (max-width: 700px) {
+    #maincontainer {
+
+        display: grid;
+        grid-template-columns: repeat(2 1fr);
+        grid-template-rows: repeat(14 1fr); 
+    }
+
+    #vermelho {
+        background-color: red;
+        grid-row: 1/2;
+        grid-column: 1/3;
+    }
+    #amarelo2 {
+        background-color: yellow;
+        grid-row: 3/4;
+        grid-column: 1/3;
+    }
+    #amarelo5 {
+        background-color: yellow;
+        grid-row: 6/7;
+        grid-column: 1/3;
+    }
+    #azul1 {
+        background-color: blue;
+        grid-row: 2/3;
+        grid-column: 1/3;
+    }
+    #azul4 {
+        background-color: blue;
+        grid-row: 5/6;
+        grid-column: 1/3;
+    }
+    #verde3 {
+        background-color: green;
+        grid-row: 4/5;
+        grid-column: 1/3;
+    }
+    #verde6 {
+        background-color: green;
+        grid-row: 7/8;
+        grid-column: 1/3;
+    }
+    #preto7 {
+        background-color: black;
+        grid-row: 8/10;
+        color: white;
+        grid-column: 1/3;
+    }
+    #preto8 {
+        background-color: black;
+        grid-row: 10/12;
+        color: white;
+        grid-column: 1/3;
+    }
+    #branco9 {
+        background-color: white;
+        grid-row: 12/13;
+        grid-column: 1/3;
+    }
+    #branco10 {
+        background-color: white;
+        grid-row: 13/14;
+        grid-column: 1/3;
+    }
+    #branco11 {
+        background-color: white;
+        grid-row: 14/15;
+        grid-column: 1/3;
+    }
+    
+}
