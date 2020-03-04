@@ -54,7 +54,7 @@ console.log(mensagem)*/
 //Uncaught ReferenceError: mensagem is not defined
 // mensagem não é uma variavel declarada de forma global, e sim apenas no bloco
 
-const primeiroNumero = Number(prompt("Digite um numero de 1 a 10"))
+/*const primeiroNumero = Number(prompt("Digite um numero de 1 a 10"))
 const segundoNumero = Number(prompt("Digite um numero de 1 a 10"))
 const terceiroNumero = Number(prompt("Digite um numero de 1 a 10"))
 if ((primeiroNumero > segundoNumero) && (segundoNumero > terceiroNumero)) {
@@ -81,6 +81,54 @@ if ((primeiroNumero > segundoNumero) && (segundoNumero > terceiroNumero)) {
     console.log (terceiroNumero)
     console.log (segundoNumero)
     console.log (primeiroNumero)
-}
+} */
 // numeros iguais apenas exibe indiferente da ordem
-// ivonete, 
+//a. Foto postada junto a pasta do exercício.
+//b.
+let vertebras = prompt("tem vertebras ? (s/n)");
+let mamifero;
+let racional;
+let penas;
+let terrestre;
+let agua;
+if (vertebras === "s"){
+    mamifero = prompt("é mamifero? (s/n)");
+//é mamifero
+    if (mamifero ==="s"){
+        racional = prompt("é racional ? (s/n)");
+        if(racional === "s"){
+            console.log("é um humano");
+        }
+        else {
+            console.log("é um mamifero não racional");
+        }
+    }
+//não mamifero
+    else {
+        penas = prompt("tem penas ? (s/n)") 
+        if(penas === "s"){
+            console.log("é uma ave");
+        }
+//não é uma ave
+        else {
+        terrestre = prompt("é terrestre ? (s/n)");
+        if(terrestre==="s"){
+//é terrestre
+        agua = prompt("passa parte da vida na água ? (s/n)");
+        if(agua==="s"){
+            console.log("é um anfibio");
+        }
+        else{
+            console.log("é um reptil");
+        }
+    }
+//não é terrestre
+    else{
+        console.log("é um peixe");
+        }
+    }
+}
+}
+else{
+    console.log("invertebrado")
+}
