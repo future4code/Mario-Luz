@@ -154,7 +154,7 @@ for(let i = 0; i < arrayOriginal.length; i++){
 console.log(arrayDividido, "é par")*/
 
 
-let arrayOriginal = [80, 30, 130, 40, 60, 21, 70, 120, 90, 103, 110, 55]
+/*let arrayOriginal = [80, 30, 130, 40, 60, 21, 70, 120, 90, 103, 110, 55]
 let index = 0
 const frases = []
 for(let i = 0; i < arrayOriginal.length; i++){
