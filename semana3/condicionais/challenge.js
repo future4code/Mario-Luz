@@ -1,4 +1,4 @@
-/*const respostaDoUsuario = prompt("Digite o número que você quer testar?")
+k/*const respostaDoUsuario = prompt("Digite o número que você quer testar?")
 const numero = Number(respostaDoUsuario)
 
 if(numero % 2 === 0) {
@@ -132,3 +132,4 @@ if (vertebras === "s"){
 else{
     console.log("invertebrado")
 }
+//fim
