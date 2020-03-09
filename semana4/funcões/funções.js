@@ -94,7 +94,7 @@ console.log(anosHumanos(4))
 parametros("Mario", 33, "São Paulo", True)
 */
 
-let seculo = (ano) => {
+/*let seculo = (ano) => {
 
     if(ano >= 1001 && ano <= 1100){
       return "O " + ano + " pertence ao século XI";
@@ -124,4 +124,34 @@ let seculo = (ano) => {
   }
   
   console.log(seculo(2020));
+  */
+  const array = [10, 23, 45, 78, 90, 52, 35, 67, 84, 22]
+ const tamanhoArray = (array) => {
+     return array.length
+ }
+ console.log(tamanhoArray(array))
+ 
+
+  const boleano = (numero) => {
+      if(numero % 2 === 0){
+          return numero + "é par"
+      }else{
+         return numero= "é impar"
+     }
+  }
+  console.log(boleano(10))
+
+
+  const quantidadeDePar = (array) => {
+    let arrayPar = 0;
+    for(let elemento of array){
+        if(elemento%2 === 0){
+            arrayPar++;
+        }
+    }
+    return arrayPar ;
+  }
   
+  let resultado = quantidadeDePar(array);
+  console.log("A quantidade de números pares é ", resultado);
+
