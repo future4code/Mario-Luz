@@ -109,7 +109,7 @@ class Pokedex extends Component {
                     alt = "Pokémon" / >
                 } <
                 /DivPokemon> <
-                TextoHabilidades > Atackk: < /TextoHabilidades> <
+                TextoHabilidades > Atackk < /TextoHabilidades> <
                 DivHabilidades >
                 <
                 p > { this.state.habilidade } < /p> < /
