@@ -1,90 +1,36 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from 'styled-components'
+import Inputs from './Components/Inputs/Inputs';
+import Tasks from './Components/Tasks/Tasks';
+import BottomBar from './Components/BottomBar/BottomBar';
+import {Provider} from 'react-redux'
+import { store } from './store';
 
 
+const DivWrapper = styled.div`
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
 
-const TarefaList = styled.ul`
-  padding: 0;
-  width: 200px;
+`
+const MainTitle = styled.div`
+font-size: 50px;
+color: red;
 `
 
-const Tarefa = styled.li`
-  text-align: left;
-  text-decoration: ${({completa}) => (completa ? 'line-through' : 'none')};
-`
 
-const InputsContainer = styled.div`
-  display: grid;
-  grid-auto-flow: column;
-  gap: 10px;
-`
-const DivPai = styled.div`
-  font-family: sans-serif;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
- ` 
-
-
-class App extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      tarefas: [
-        
-      ],
-      inputValue: '',
-      filter: ''
-    }
-  }
-
-  
-  render() {
-    const listaFiltrada = this.state.tarefas
-      .filter(tarefa => {
-        switch (this.state.filter) {
-          case 'pendentes':
-            return !tarefa.completa
-          case 'completas':
-            return tarefa.completa
-          default:
-            return true
-        }
-      })
-
-    return (
-      <DivPai>
-        <h1>LABTASK</h1>
-        <InputsContainer>
-          <input value={this.state.inputValue} onChange={this.onChangeInput}/>
-          <button onClick={this.criaTarefa}>Adicionar</button>
-        </InputsContainer>
-        <br/>
-
-        <InputsContainer>
-          <label>Filtro</label>
-          <select value={this.state.filter} onChange={this.onChangeFilter}>
-            <option value="">Nenhum</option>
-            <option value="pendentes">Pendentes</option>
-            <option value="completas">Completas</option>
-          </select>
-        </InputsContainer>
-        <TarefaList>
-          {listaFiltrada.map(tarefa => {
-            return (
-              <Tarefa
-                completa={tarefa.completa}
-                onClick={() => this.selectTarefa(tarefa.id)}
-              >
-                {tarefa.texto}
-              </Tarefa>
-            )
-          })}
-        </TarefaList>
-      </DivPai>
-    )
-  }
+function App() {
+  return (
+    <Provider store={store}>
+    <DivWrapper >
+      <MainTitle>4TASK</MainTitle>
+      <Inputs />
+      <Tasks />
+      <BottomBar/>
+    </DivWrapper>
+    </Provider>
+  );
 }
 
-export default App
+export default App;
