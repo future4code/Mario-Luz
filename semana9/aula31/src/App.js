@@ -1,36 +1,29 @@
-import React from 'react';
-import styled from 'styled-components'
-import Inputs from './Components/Inputs/Inputs';
-import Tasks from './Components/Tasks/Tasks';
-import BottomBar from './Components/BottomBar/BottomBar';
-import {Provider} from 'react-redux'
-import { store } from './store';
+import React from 'react'
+import JssProvider from 'react-jss/lib/JssProvider'
+import { create } from 'jss'
+import { MuiThemeProvider, createGenerateClassName, jssPreset } from '@material-ui/core/styles'
+import { createMuiTheme } from '@material-ui/core/styles'
+import CssBaseline from '@material-ui/core/CssBaseline'
+import { AppContainer } from './containers/appcontainer/AppContainer'
 
+const generateClassName = createGenerateClassName()
+const jss = create({
+	...jssPreset(),
+	// We define a custom insertion point that JSS will look for injecting the styles in the DOM. 
+	insertionPoint: document.getElementById('jss-insertion-point'),
+})
 
-const DivWrapper = styled.div`
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-
-`
-const MainTitle = styled.div`
-font-size: 50px;
-color: red;
-`
-
+const theme = createMuiTheme()
 
 function App() {
-  return (
-    <Provider store={store}>
-    <DivWrapper >
-      <MainTitle>4TASK</MainTitle>
-      <Inputs />
-      <Tasks />
-      <BottomBar/>
-    </DivWrapper>
-    </Provider>
-  );
+	return (
+		<JssProvider jss={jss} generateClassName={generateClassName}>
+			<MuiThemeProvider theme={theme}>
+				<CssBaseline />
+				<AppContainer />
+			</MuiThemeProvider>
+		</JssProvider>
+	)
 }
 
-export default App;
+export default App
