@@ -1,0 +1,18 @@
+NAVBAR - #CE102C
+PRETO - #030303
+STROKE - AMARELO - #FEE123
+
+Poller One - FONTE
+ROBOTO - RODAPÉ
+
+
+
+
+
+
+
+
+
+
+
+
