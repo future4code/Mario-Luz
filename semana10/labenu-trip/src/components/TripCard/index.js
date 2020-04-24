@@ -7,8 +7,9 @@ const ContainerTripCard = styled.div`
     width: 90%;
     height: 90%;
     gap: 10px;
-    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.5);
-    border-radius: 15px;
+    box-shadow: 0 0px 10px  #FEE123;;
+    border-radius: 70px;
+    border-color: #FEE123;
     color: #FEE123;
     padding: 20px;
     display: flex;
