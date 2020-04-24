@@ -32,9 +32,9 @@ export const createTrip = (form) => async (dispatch) => {
     try {
         await axios.post(`https://us-central1-missao-newton.cloudfunctions.net/futureX/marioluz/trips`, formData, config)
 
-        window.alert("Sua viagem foi cadastrada com sucesso!")
+        window.alert("Viagem Cadastrada Com Sucesso!")
     } catch(error) {
-        window.alert("Ocorreu um erro ao tentar cadastrar a viagem.")
+        window.alert("Erro Ao Cadastrar a Viagem.")
     }
 }
 
