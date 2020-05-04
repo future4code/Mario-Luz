@@ -1,18 +1,37 @@
 import { anoBissexto } from "./ex1";
 
+// Describe é só uma forma de agrupar testes
 describe("Ano bissexto", () => {
-      it("Testa se a função retorna false se 2004 é múltiplo de 400", () => {
-        let ano = 2008;
-        let result = anoBissexto();
-        expect(result).toBe(false); }
-      )
-      it("Testa se a função consegue imprimir true se um ano for multiplo de 4 mas não de 100", () => {
-        let ano = 2008;
-        let result = anoBissexto(ano);
+  test("Múltiplo de 400 ", () => {
+    // Preparação
+    const ano = 1600;
 
-        expect(result).toBe(true); }
-      )
-    }
-)
+    // Execução
+    const resultado = anoBissexto(ano);
 
+    // Verificação
+    expect(resultado).toBe(true);
+  });
 
+  test("Múltiplo de 4 ", () => {
+    // Preparação
+    const ano = 1996;
+
+    // Execução
+    const resultado = anoBissexto(ano);
+
+    // Verificação
+    expect(resultado).toBe(true);
+  });
+
+  test("Ano não bissexto", () => {
+    // Preparação
+    const ano = 1997;
+
+    // Execução
+    const resultado = anoBissexto(ano);
+
+    // Verificação
+    expect(resultado).toBe(false);
+  });
+});

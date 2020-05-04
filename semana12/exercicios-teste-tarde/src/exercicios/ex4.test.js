@@ -1,9 +1,36 @@
 import { removeItensDuplicados } from "./ex4";
-test("Primeiro teste", () => {
-  const teste = [1, 2, 3, 2, 4, 4, 3, 5, 5];
-  console.log(removeItensDuplicados(teste));
-});
-test("Segundo teste", () => {
-  const teste2 = ["Teste", "Blablabla", "Metal is the law", "Blablabla"];
-  console.log(removeItensDuplicados(teste2));
+
+describe("Remove itens duplicados", () => {
+  it("Testando array com números duplicados no meio", () => {
+    // Preparação
+    const valoresParaTeste = [1, 2, 3, 2, 4];
+
+    // Execução
+    const resultado = removeItensDuplicados(valoresParaTeste);
+
+    // Verificação
+    expect(resultado).toEqual([1, 2, 3, 4]);
+  });
+
+  it("Testando array com números duplicados nas pontas", () => {
+    // Preparação
+    const valoresParaTeste = [0, 2, 3, 2, 1, 0];
+
+    // Execução
+    const resultado = removeItensDuplicados(valoresParaTeste);
+
+    // Verificação
+    expect(resultado).toEqual([0, 2, 3, 1]);
+  });
+
+  it("Testando array sem números duplicados", () => {
+    // Preparação
+    const valoresParaTeste = [1, 2, 3, 4, 5, 6, 7, 9, 0];
+
+    // Execução
+    const resultado = removeItensDuplicados(valoresParaTeste);
+
+    // Verificação
+    expect(resultado).toEqual(valoresParaTeste);
+  });
 });
