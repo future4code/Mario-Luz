@@ -7,6 +7,7 @@ export const AppWrapper = styled.div`
   height: 100vh;
   display:flex;
   flex-direction:column;
+  background-color: #F4F4ED;
 `
 
 export const InputTask = styled.div`
@@ -18,6 +19,16 @@ export const PlannerView = styled.div`
   display:grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   gap: 15px;
+  
+  
+`
+export const DailyCard= styled.div`
+border: solid 4px black;
+border-radius: 8px;
+padding: 10px;
+background-color:#00F0B5;
+
+
 `
 export const Button = styled.button`
 
@@ -50,12 +61,11 @@ export class Planner extends React.Component {
     return <AppWrapper>
       <InputTask>
         <div>
-          <h1>Tarefas</h1>
-          
+          <h1>PLANNER</h1>
           <input type="text"
            value={this.state.text}
            onChange={this.onChangeTask}
-           name="text"> </input>
+           name="text"></input>
           <select name="day" onChange={this.onChangeTask} >
             <option value="Segunda">Segunda</option>
             <option value="Terca">Terça</option>
@@ -69,55 +79,55 @@ export class Planner extends React.Component {
         </div>
       </InputTask>
       <PlannerView>
-        <div><h3>Segunda</h3>
+        <DailyCard><h3>Segunda</h3>
         <ul>
           {this.props.tasks && this.props.tasks.filter((task) => {
             return task.day ==="Segunda"}).map(task => (
             <li key={task.id}>{task.text}</li>))}
         </ul>
-        </div>
-        <div><h3>Terça</h3>
+        </DailyCard>
+        <DailyCard><h3>Terça</h3>
         <ul>
           {this.props.tasks && this.props.tasks.filter((task) => {
             return task.day ==="Terca"}).map(task => (
             <li key={task.id}>{task.text}</li>))}
         </ul>
-        </div>
-        <div><h3>Quarta</h3>
+        </DailyCard>
+        <DailyCard><h3>Quarta</h3>
         <ul>
           {this.props.tasks && this.props.tasks.filter((task) => {
             return task.day ==="Quarta"}).map(task => (
             <li key={task.id}>{task.text}</li>))}
         </ul>
-        </div>
-        <div><h3>Quinta</h3>
+        </DailyCard>
+        <DailyCard><h3>Quinta</h3>
         <ul>
           {this.props.tasks && this.props.tasks.filter((task) => {
             return task.day ==="Quinta"}).map(task => (
             <li key={task.id}>{task.text}</li>))}
         </ul>
-        </div>
-        <div><h3>Sexta</h3>
+        </DailyCard>
+        <DailyCard><h3>Sexta</h3>
         <ul>
           {this.props.tasks && this.props.tasks.filter((task) => {
             return task.day ==="Sexta"}).map(task => (
             <li key={task.id}>{task.text}</li>))}
         </ul>
-        </div>
-        <div><h3>Sabado</h3>
+        </DailyCard>
+        <DailyCard><h3>Sabado</h3>
         <ul>
           {this.props.tasks && this.props.tasks.filter((task) => {
             return task.day ==="Sabado"}).map(task => (
             <li key={task.id}>{task.text}</li>))}
         </ul>
-        </div>
-        <div><h3>Domingo</h3>
+        </DailyCard>
+        <DailyCard><h3>Domingo</h3>
         <ul>
           {this.props.tasks && this.props.tasks.filter((task) => {
             return task.day ==="Domingo"}).map(task => (
             <li key={task.id}>{task.text}</li>))}
         </ul>
-        </div>
+        </DailyCard>
       </PlannerView>
     </AppWrapper>;
   }

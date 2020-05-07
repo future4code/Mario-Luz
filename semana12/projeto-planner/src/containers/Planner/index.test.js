@@ -43,7 +43,7 @@ describe("Planner Component", () => {
     
         buttonCreateTask.simulate("click");
     
-        expect(mockCreateTask).toHaveBeenCalledWith(1);
+        expect(mockCreateTask).toHaveBeenCalledWith("", "Segunda");
       });
 
 })
