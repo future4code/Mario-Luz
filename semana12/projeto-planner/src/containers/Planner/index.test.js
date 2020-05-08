@@ -1,6 +1,7 @@
 import { shallow } from "enzyme";
-import { AppWrapper, Planner, InputTask, PlannerView, Button } from "./index";
+import {AppWrapper, Planner, InputTask, PlannerView, Button, DailyCard} from "./index";
 import React from 'react'
+import renderer from  'react-test-renderer';
 
 
 describe("Planner Component", () => {
@@ -45,5 +46,28 @@ describe("Planner Component", () => {
     
         expect(mockCreateTask).toHaveBeenCalledWith("", "Segunda");
       });
-
+     test("teste-AppWrapper ", ()=>{
+         const newSnapShot = renderer.create(<AppWrapper/>).toJSON()
+         expect (newSnapShot).toMatchSnapshot();
+     })
+    test("teste-InputTask", ()=>{
+        const newSnapShot = renderer.create(<InputTask/>).toJSON()
+        expect (newSnapShot).toMatchSnapshot();
+    })
+    test("teste-PlannerView", ()=>{
+        const newSnapShot = renderer.create(<PlannerView/>).toJSON()
+        expect (newSnapShot).toMatchSnapshot();
+    })
+    test("teste-DailyCard", ()=>{
+        const newSnapShot = renderer.create(<DailyCard/>).toJSON()
+        expect (newSnapShot).toMatchSnapshot();
+    })
+    test("teste-Button", ()=>{
+        const newSnapShot = renderer.create(<Button/>).toJSON()
+        expect (newSnapShot).toMatchSnapshot();
+    })
+    test("teste-Select", ()=>{
+        const newSnapShot = renderer.create(<select/>).toJSON()
+        expect (newSnapShot).toMatchSnapshot();
+    })
 })

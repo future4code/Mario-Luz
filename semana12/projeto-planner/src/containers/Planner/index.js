@@ -22,7 +22,7 @@ export const PlannerView = styled.div`
   
   
 `
-export const DailyCard= styled.div`
+export const DailyCard = styled.div`
 border: solid 4px black;
 border-radius: 8px;
 padding: 10px;
