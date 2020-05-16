@@ -1,0 +1,172 @@
+{
+	"id": "7e27f3b2-b85d-4924-b4bd-f9eb90749634",
+	"name": "spotif4",
+	"timestamp": "2020-03-30T18:35:09.764Z",
+	"collection_id": "c23b69a6-5bf4-4521-9452-7c005f2ab1be",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 0,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "b7bf040c-b27c-4ac1-9d73-7fb05aae68bd",
+			"name": "createPlaylist",
+			"url": "https://us-central1-future-apis.cloudfunctions.net/spotifour/playlists",
+			"time": 249,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				249
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "effce41b-2d7d-439a-ada0-1b993eedf58f",
+			"name": "addSongToPlaylist",
+			"url": "https://us-central1-future-apis.cloudfunctions.net/spotifour/playlists/b8f3dc22-366b-4d2a-8e6b-c4a740fbed0e/songs",
+			"time": 317,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				317
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "37715dcc-9896-4203-8f1d-a93df498c088",
+			"name": "getAllPlaylists",
+			"url": "https://us-central1-future-apis.cloudfunctions.net/spotifour/playlists",
+			"time": 282,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				282
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "69ae06b3-b64d-4b28-9176-5e9ae848d3d2",
+			"name": "searchPlaylist",
+			"url": "https://us-central1-future-apis.cloudfunctions.net/spotifour/playlists/search?name=string",
+			"time": 213,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				213
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "e95f0b43-84ef-41a3-855d-07a91342d641",
+			"name": "getPlaylistSongs",
+			"url": "https://us-central1-future-apis.cloudfunctions.net/spotifour/playlists//songs",
+			"time": 177,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				177
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "10ed3744-69ec-4ab8-a4da-7f485ed2aba2",
+			"name": "deletePlaylist",
+			"url": "https://us-central1-future-apis.cloudfunctions.net/spotifour/playlists/",
+			"time": 168,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				168
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "dc1fae5f-5ed8-4a72-b5c6-8c15c0d794b0",
+			"name": "removeSongFromPlaylist",
+			"url": "https://us-central1-future-apis.cloudfunctions.net/spotifour/playlists//songs/",
+			"time": 168,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				168
+			],
+			"allTests": [
+				{}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 1574,
+	"collection": {
+		"requests": [
+			{
+				"id": "b7bf040c-b27c-4ac1-9d73-7fb05aae68bd",
+				"method": "POST"
+			},
+			{
+				"id": "effce41b-2d7d-439a-ada0-1b993eedf58f",
+				"method": "POST"
+			},
+			{
+				"id": "37715dcc-9896-4203-8f1d-a93df498c088",
+				"method": "GET"
+			},
+			{
+				"id": "69ae06b3-b64d-4b28-9176-5e9ae848d3d2",
+				"method": "GET"
+			},
+			{
+				"id": "e95f0b43-84ef-41a3-855d-07a91342d641",
+				"method": "GET"
+			},
+			{
+				"id": "10ed3744-69ec-4ab8-a4da-7f485ed2aba2",
+				"method": "DELETE"
+			},
+			{
+				"id": "dc1fae5f-5ed8-4a72-b5c6-8c15c0d794b0",
+				"method": "DELETE"
+			}
+		]
+	}
+}

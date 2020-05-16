@@ -1,0 +1,40 @@
+div {
+    border: 2px solid #313B3E;
+    border-radius: 10px;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    max-width: 600px;
+    background-color: #A8BBC6;
+    align-items: baseline;
+    justify-content: space-evenly;
+    
+}
+
+.item {
+    background-color: #EEEEEE;
+}
+
+#item1 {
+    
+    width: 100px;
+    align-self: center;
+    order: 2;
+    
+
+}
+
+#item2 {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: flex-end;
+    order: 1;
+}
+
+#item3 {
+    height: 300px;
+    order: 0;
+}

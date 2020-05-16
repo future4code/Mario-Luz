@@ -1,0 +1,55 @@
+*{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: whitesmoke
+}   
+
+header, h2{
+    text-align: center;
+}
+
+main{
+    margin: 40px 0;
+    text-align: center;
+    width: 940px;
+    margin: 0 auto;
+}
+
+main label{
+    display: flexbox;
+    flex-direction: row;
+    font-size: 20px;
+    margin-top: 20px;
+    font-weight: bold;    
+}
+
+input, textarea{    
+    display: block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    width: 100%;    
+}
+
+button {
+    margin-top: 20px;
+    height: 100px;
+    width: 300px;
+}
+
+@media screen and (max-width: 700px ){
+   main{
+       width: 600px; 
+                  
+   }  
+
+   input, text-area{
+       width: 80%;
+       margin-top: 0;
+       
+        
+       
+   }
+
+
+
+    
+}
