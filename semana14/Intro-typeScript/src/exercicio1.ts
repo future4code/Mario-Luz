@@ -24,3 +24,4 @@ function multiplicacao(numero1: number, numero2: number): number {
 function maiorNumero(numero1: number, numero2: number): number {
     return numero1>numero2?numero1:numero2
 }
+//pequeno coments
