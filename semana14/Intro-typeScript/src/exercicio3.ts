@@ -32,5 +32,9 @@ console.log(retornaPosts(posts,autor))
 
 function retornaPosts(posts:post[],autor:string):post[] {
   return posts.filter(post=>{return post.autor===autor})
+
 }
 //opas
+
+}
+
