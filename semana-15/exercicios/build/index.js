@@ -1,3 +1,17 @@
+// 1
+// A. Endpoint GET.
+// B.Any[]
+//
+// 2
+// A
+//
+// 3
+//A.
+//B.
+//
+// 4
+// A.
+// }
 "use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
@@ -13,20 +27,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const axios_1 = __importDefault(require("axios"));
-// 1
-// A. Endpoint GET.
-// B.Any[]
-//
-// 2
-// A
-//
-// 3
-//A.
-//B.
-//
-// 4
-// A.
-// }
+
 const baseUrl = `https://us-central1-labenu-apis.cloudfunctions.net/labenews`;
 const getSubs = () => __awaiter(void 0, void 0, void 0, function* () {
     const users = yield axios_1.default.get(`${baseUrl}/subscribers/all`);
@@ -70,3 +71,4 @@ const main = () => __awaiter(void 0, void 0, void 0, function* () {
     }
 });
 main();
+//
