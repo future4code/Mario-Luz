@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Planner Component teste-AppWrapper  1`] = `
+<div
+  className="sc-bdVaJa kyFfpk"
+/>
+`;
+
+exports[`Planner Component teste-Button 1`] = `
+<button
+  className="sc-ifAKCX jtdfU"
+/>
+`;
+
+exports[`Planner Component teste-DailyCard 1`] = `
+<div
+  className="sc-bxivhb jDudpg"
+/>
+`;
+
+exports[`Planner Component teste-InputTask 1`] = `
+<div
+  className="sc-bwzfXH cxZyMH"
+/>
+`;
+
+exports[`Planner Component teste-PlannerView 1`] = `
+<div
+  className="sc-htpNat lfxjWq"
+/>
+`;
+
+exports[`Planner Component teste-Select 1`] = `<select />`;
