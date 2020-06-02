@@ -111,8 +111,8 @@ console.log('------------------Exercício 10--------------------');
 
 const newSeller2 = new Seller(
   uuid(),
-  'teste2@gmail.com',
-  'Luiz2',
+  'marioluzz@mario.com',
+  'mario2',
   '323323',
   '10/04/2019',
   4239
