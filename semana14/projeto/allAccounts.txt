@@ -1,0 +1,7 @@
+[{"name":"Mario","cpf":"111.111.111-01","birth":"16/02/1980","balance":15,"statement":[]},
+{"name":"mario","cpf":"111.111.111-01","birth":"16/02/1980","balance":0,"statement":[]},
+{"name":"mario","cpf":"111.111.111-01","birth":"16/02/1980","balance":0,"statement":[]},
+{"name":"mario","cpf":"111.111.111-01","birth":"16/02/1980","balance":0,"statement":[]},
+{"name":"marios","cpf":"111.111.111-01","birth":"16/02/1980","balance":0,"statement":[]},
+{"name":"marios","cpf":"111.111.111-01","birth":"16/02/1980","balance":0,"statement":[]},
+{"name":"mariosss","cpf":"111.111.111-01","birth":"16/02/1980","balance":0,"statement":[]}]
