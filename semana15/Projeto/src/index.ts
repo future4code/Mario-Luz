@@ -7,7 +7,7 @@ import { Mission } from "./Classes/Mission";
 import { DaytimeMission } from "./Classes/DaytimeClass";
 import { NightMission } from "./Classes/NightClass";
 //---------------------------------------------------------------------------//
-const artur = new SchoolManager
+const BigBoss = new SchoolManager
 //----------------------------------------------------------------------------//
 const richard = new Teacher(
   "Richard",
@@ -65,15 +65,15 @@ const hamilton = new NightMission(
 
 hamilton.setName('Hamilton-na-night')
 
-artur.getDataBase(databases.students)
-artur.registerStudent(igor)
-artur.registerStudent(bruno)
-artur.setDataBase(databases.students)
+BigBoss.getDataBase(databases.students)
+BigBoss.registerStudent(igor)
+BigBoss.registerStudent(bruno)
+BigBoss.setDataBase(databases.students)
 
-artur.getDataBase(databases.teachers)
-artur.registerTeacher(richard)
-artur.registerTeacher(soter)
-artur.setDataBase(databases.teachers)
+BigBoss.getDataBase(databases.teachers)
+BigBoss.registerTeacher(richard)
+BigBoss.registerTeacher(soter)
+BigBoss.setDataBase(databases.teachers)
 
 mello.addStudent(igor)
 mello.addStudent(bruno)
@@ -85,7 +85,7 @@ hamilton.addStudent(bruno)
 hamilton.addTeacher(richard)
 hamilton.addTeacher(soter)
 
-artur.getDataBase(databases.missions)
-artur.registerMission(mello)
-artur.registerMission(hamilton)
-artur.setDataBase(databases.missions)
+BigBoss.getDataBase(databases.missions)
+BigBoss.registerMission(mello)
+BigBoss.registerMission(hamilton)
+BigBoss.setDataBase(databases.missions)
