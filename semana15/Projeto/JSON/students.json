@@ -1,0 +1,25 @@
+[
+  {
+    "name": "igor",
+    "email": "igor@lbn.com",
+    "id": "bateras",
+    "birthDate": "1987-12-28T02:00:00.000Z",
+    "hobbies": [
+      "Bateria",
+      "CS-GO",
+      "CSS",
+      "host-de-video-chamada"
+    ]
+  },
+  {
+    "name": "bruno",
+    "email": "bruno@lbn.com",
+    "id": "risoles",
+    "birthDate": "1994-08-18T03:00:00.000Z",
+    "hobbies": [
+      "tecladista",
+      "comedor de risoles",
+      "vive com refluxo"
+    ]
+  }
+]
