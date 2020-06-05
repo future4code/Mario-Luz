@@ -13,4 +13,3 @@ class NightMission extends Mission_1.Mission {
     }
 }
 exports.NightMission = NightMission;
-//# sourceMappingURL=NightClass.js.map

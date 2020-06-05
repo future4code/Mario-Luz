@@ -11,4 +11,3 @@ class Teacher {
     }
 }
 exports.Teacher = Teacher;
-//# sourceMappingURL=Teacher.js.map

@@ -50,4 +50,3 @@ exports.SchoolManager = SchoolManager;
 SchoolManager.TEACHERS = [];
 SchoolManager.STUDENTS = [];
 SchoolManager.MISSIONS = [];
-//# sourceMappingURL=SchoolManager.js.map

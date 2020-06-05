@@ -21,4 +21,3 @@ class Mission {
     }
 }
 exports.Mission = Mission;
-//# sourceMappingURL=Mission.js.map

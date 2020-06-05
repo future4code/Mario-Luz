@@ -44,4 +44,3 @@ artur.getDataBase(Enums_1.databases.missions);
 artur.registerMission(mello);
 artur.registerMission(hamilton);
 artur.setDataBase(Enums_1.databases.missions);
-//# sourceMappingURL=index.js.map

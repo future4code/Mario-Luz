@@ -15,4 +15,3 @@ class Student {
     }
 }
 exports.Student = Student;
-//# sourceMappingURL=Student.js.map

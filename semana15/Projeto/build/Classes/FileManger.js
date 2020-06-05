@@ -21,4 +21,3 @@ exports.FileManager = FileManager;
 exports.teachers = new FileManager("./JSON/teachers.json");
 exports.studants = new FileManager("./JSON/students.json");
 exports.missions = new FileManager("./JSON/missions.json");
-//# sourceMappingURL=FileManger.js.map

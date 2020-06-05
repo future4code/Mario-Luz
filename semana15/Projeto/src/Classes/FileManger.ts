@@ -22,16 +22,3 @@ export const studants = new FileManager("./JSON/students.json");
 export const missions = new FileManager("./JSON/missions.json");
 
 
-/* // imprime as infos do arquivo
-console.log(teachers.readFile());
-
-
-
-// escreve no arquivo
-teachers.writeFile({
-  id: "1",
-  name: "Goli",
-});
-
-// imprime as infos do arquivo
-console.log(teachers.readFile()); */
