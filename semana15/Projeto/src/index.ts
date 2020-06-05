@@ -13,7 +13,7 @@ const richard = new Teacher(
   "Richard",
   'richard@lbn.com',
   '10',
-  moment('06/01/90', 'DD/MM/YY'),
+  moment('24/09/1950', 'DD/MM/YY'),
   [
     specialty.CSS,
     specialty.TYPESCRIPT,
@@ -62,6 +62,7 @@ const hamilton = new NightMission(
   moment('17/02/2020', 'DD/MM/YYYY'),
   moment('04/09/2020', 'DD/MM/YYYY'),
 )
+
 hamilton.setName('Hamilton-na-night')
 
 artur.getDataBase(databases.students)
