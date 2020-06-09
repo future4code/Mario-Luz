@@ -1,0 +1,112 @@
+[
+  {
+    "id": "pequenos gafanhotos",
+    "startDate": "2020-01-13T03:00:00.000Z",
+    "endDate": "2020-07-27T03:00:00.000Z",
+    "name": "mello",
+    "studentsList": [
+      {
+        "name": "igor",
+        "email": "igor@lbn.com",
+        "id": "bateras",
+        "birthDate": "1987-12-28T02:00:00.000Z",
+        "hobbies": [
+          "Bateria",
+          "CS-GO",
+          "CSS",
+          "host-de-video-chamada"
+        ]
+      },
+      {
+        "name": "bruno",
+        "email": "bruno@lbn.com",
+        "id": "risoles",
+        "birthDate": "1994-08-18T03:00:00.000Z",
+        "hobbies": [
+          "tecladista",
+          "comedor de risoles",
+          "vive com refluxo"
+        ]
+      }
+    ],
+    "teachersList": [
+      {
+        "name": "Richard",
+        "email": "richard@lbn.com",
+        "id": "10",
+        "birthDate": "1990-01-06T02:00:00.000Z",
+        "specialties": [
+          "CSS",
+          "TYPE-SCRIPT",
+          "POO"
+        ]
+      },
+      {
+        "name": "Soter",
+        "email": "soter@lbn.com",
+        "id": "2",
+        "birthDate": "1996-08-15T03:00:00.000Z",
+        "specialties": [
+          "BACK-END",
+          "TYPE-SCRIPT",
+          "POO"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "tuma zika do baile",
+    "startDate": "2020-02-17T03:00:00.000Z",
+    "endDate": "2020-09-04T03:00:00.000Z",
+    "name": "Hamilton-na-night",
+    "studentsList": [
+      {
+        "name": "igor",
+        "email": "igor@lbn.com",
+        "id": "bateras",
+        "birthDate": "1987-12-28T02:00:00.000Z",
+        "hobbies": [
+          "Bateria",
+          "CS-GO",
+          "CSS",
+          "host-de-video-chamada"
+        ]
+      },
+      {
+        "name": "bruno",
+        "email": "bruno@lbn.com",
+        "id": "risoles",
+        "birthDate": "1994-08-18T03:00:00.000Z",
+        "hobbies": [
+          "tecladista",
+          "comedor de risoles",
+          "vive com refluxo"
+        ]
+      }
+    ],
+    "teachersList": [
+      {
+        "name": "Richard",
+        "email": "richard@lbn.com",
+        "id": "10",
+        "birthDate": "1990-01-06T02:00:00.000Z",
+        "specialties": [
+          "CSS",
+          "TYPE-SCRIPT",
+          "POO"
+        ]
+      },
+      {
+        "name": "Soter",
+        "email": "soter@lbn.com",
+        "id": "2",
+        "birthDate": "1996-08-15T03:00:00.000Z",
+        "specialties": [
+          "BACK-END",
+          "TYPE-SCRIPT",
+          "POO"
+        ]
+      }
+    ]
+  }
+]
