@@ -92,3 +92,5 @@ INSERT INTO Oscar(id, oscar_name, movie_id, date_win) VALUES("002", "Óscar de m
 d)
 
 SELECT m.name as "Nome do filme", o.oscar_name as "Óscar" FROM movies m JOIN Oscar o ON m.id = o.movie_id
+
+testes
