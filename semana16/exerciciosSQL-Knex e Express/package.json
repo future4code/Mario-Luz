@@ -1,13 +1,14 @@
 {
-  "name": "Integração",
+  "name": "SQL-KNEX",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start:dev": "ts-node-dev ./src/index.ts"
+    "start": "ts-node-dev ./src/index.ts",
+    "start": "tsc && node build/index.js"
   },
-  "author": "Mario Luz",
+  "author": "MarioLuzz",
   "license": "ISC",
   "dependencies": {
     "@types/express": "4.17.0",
@@ -18,9 +19,7 @@
     "knex": "^0.21.1",
     "mysql": "^2.18.1",
     "ts-node": "^8.6.2",
+    "ts-node-dev": "^1.0.0-pre.44",
     "typescript": "^3.8.3"
-  },
-  "devDependencies": {
-    "ts-node-dev": "^1.0.0-pre.44"
   }
 }
