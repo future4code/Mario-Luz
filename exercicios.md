@@ -17,14 +17,14 @@ VALUES(
   "13",
   6.6
 );
-c) Error Code: 1452. Cannot add or update a child row: a foreign key constraint fails (`sagan_andrius_db`.`Rating`, CONSTRAINT `Rating_ibfk_1` FOREIGN KEY (`movie_id`) REFERENCES `movies` (`id`))
+c) Error Code: 1452. Cannot add or update a child row: a foreign key constraint fails (`hamilton_mario_luz`.`Rating`, CONSTRAINT `Rating_ibfk_1` FOREIGN KEY (`movie_id`) REFERENCES `movies` (`id`))
 
 Retorna um erro informando que não pode atualizar ou adicionar uma linha de uma chave estrangeira porque houve uma falha na chave estrangeira.
 
 d)
 
 ALTER TABLE movies DROP COLUMN Rating;
-e) Error Code: 1451. Cannot delete or update a parent row: a foreign key constraint fails (`sagan_andrius_db`.`Rating`, CONSTRAINT `Rating_ibfk_1` FOREIGN KEY (`movie_id`) REFERENCES `movies` (`id`))
+e) Error Code: 1451. Cannot delete or update a parent row: a foreign key constraint fails (`hamilton_mario_luz`.`Rating`, CONSTRAINT `Rating_ibfk_1` FOREIGN KEY (`movie_id`) REFERENCES `movies` (`id`))
 
 Retorna um erro informando que não é possivel excluir ou atualizar uma linha uma linha pai.
 
@@ -34,11 +34,11 @@ a) Cria uma especie de tabela auxiliar onde cada linha possui duas colunas com i
 b)
 
 INSERT INTO MovieCast (movie_id, actor_id) VALUES ("12","005");
-c) Error Code: 1452. Cannot add or update a child row: a foreign key constraint fails (`sagan_andrius_db`.`MovieCast` , CONSTRAINT `MovieCast_ibfk_2` FOREIGN KEY (`actor_id`) REFERENCES `Actor` (`id`))
+c) Error Code: 1452. Cannot add or update a child row: a foreign key constraint fails (`hamilton_mario_luz`.`MovieCast` , CONSTRAINT `MovieCast_ibfk_2` FOREIGN KEY (`actor_id`) REFERENCES `Actor` (`id`))
 
 Retorna um erro informando que não é possivel atualizar uma linha filho porque houve uma falha com a chave estrangeira.
 
-d) Error Code: 1451. Cannot delete or update a parent row: a foreign key constraint fails (`sagan_andrius_db`.`MovieC ast`, CONSTRAINT `MovieCast_ibfk_2` FOREIGN KEY (`actor_id`) REFERENCES `Actor` (`id`)) Não é possivel apagar uma entidade que é referenciada em outras tabelas N:M.
+d) Error Code: 1451. Cannot delete or update a parent row: a foreign key constraint fails (`hamilton_mario_luz`.`MovieC ast`, CONSTRAINT `MovieCast_ibfk_2` FOREIGN KEY (`actor_id`) REFERENCES `Actor` (`id`)) Não é possivel apagar uma entidade que é referenciada em outras tabelas N:M.
 
 Exercício 3
 a) O operador ON é parecido com o where e impõe uma condição para a união de duas linhas que que normalmente são duas ch ves primárias.
