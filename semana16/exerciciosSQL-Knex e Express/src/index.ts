@@ -1,214 +1,275 @@
-import express, { Request, Response } from "express";
-import { AddressInfo } from "net";
-import knex from "knex";
 import dotenv from "dotenv";
-import { create } from "domain";
+import knex from "knex";
+import {AddressInfo} from "net";
+import express, {Request, Response} from "express";
+
 
 dotenv.config();
 
-const app = express();
-app.use(express.json());
-
 const connection = knex({
-  client: "mysql",
-  connection: {
-    host: process.env.DB_HOST,
-    port: 3306,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_DATABASE_NAME,
-  },
+    client: "mysql",
+    connection: {
+        host: process.env.DB_HOST,
+        port: 3306,
+        user: process.env.DB_USER,
+        password: process.env.DB_PASSWORD,
+        database: process.env.DB_DATABASE_NAME,
+    },
 });
 
-const server = app.listen(process.env.PORT || 3000, () => {
-  if (server) {
-    const address = server.address() as AddressInfo;
-    console.log(`Server is running in http://localhost:${address.port}`);
-  } else {
-    console.error(`Failure upon starting server.`);
-  }
-});
-
-const getActorById = async (id: string): Promise<any> => {
-  const result = await connection.raw(`
-      SELECT * FROM Actor WHERE id = '${id}'
-    `);
-  return console.log(result[0][0]);
-};
-
-const getActorByName = async (name: string): Promise<any> => {
-  const result = await connection.raw(`
-      SELECT * FROM Actor WHERE name LIKE '%${name}%'
-    `);
-  return result[0][0];
-};
-
-const quantity = async (gender: string): Promise<any> => {
-  const result = await connection.raw(`
-    SELECT COUNT(gender) 
-    AS ${gender} 
-    FROM Actor 
-    WHERE gender = '${gender}';
-  `);
-
-  return result[0][0];
-};
-
-const updateSalary = async (salary: number, id: string): Promise<any> => {
-  await connection("Actor")
-    .update({
-      salary,
-    })
-    .where("id", id);
-};
-
-const createActor = async (
-  id: string,
-  name: string,
-  salary: number,
-  birthday: Date,
-  gender: string
-): Promise<void> => {
-  await connection("Actor").insert({
-    id,
-    name,
-    salary,
-    birth_date: birthday,
-    gender,
-  });
-};
-
-const createMovie = async (
-  id: string,
-  title: string,
-  synopsis: string,
-  release_Date: Date,
-  rating: number
-): Promise<void> => {
-  await connection("Movie").insert({
-    id,
-    title,
-    synopsis,
-    release_Date,
-    rating,
-  });
-};
-
-const getAllMovies = async (): Promise<any> => {
-  const allMovies = await connection.raw(`
-  SELECT * FROM Movie LIMIT 15;
-  `);
-
-  return allMovies[0]
-};
-
-const getMovieByName = async (name: string): Promise<any> => {
-  const result = await connection.raw(`
-    SELECT * FROM Movie WHERE title LIKE '%${name}%' OR synopsis LIKE '%${name}%'
-  `)
-
-  return result[0]
+const createUserTable = async (): Promise<void> => {
+    await connection.raw(`
+    CREATE TABLE TodoListUser (
+	id VARCHAR(255) PRIMARY KEY, 
+    name VARCHAR(255) NULL, 
+    nickname VARCHAR(255) UNIQUE NOT NULL, 
+    email VARCHAR(255) UNIQUE NOT NULL
+);
+ `)
 }
 
-const deleteActor = async (id: string): Promise<any> => {
-  await connection("Actor").delete().where("id", id);
-};
+const createTodoListTaskTable = async (): Promise<void> => {
+    await connection.raw(`
+    CREATE TABLE TodoListTask (
+    id VARCHAR(255) PRIMARY KEY, 
+    title VARCHAR(255) NOT NULL, 
+    description TEXT NOT NULL, 
+    status VARCHAR(255) NOT NULL DEFAULT "to_do",
+    limit_date DATE NOT NULL,
+    creator_user_id varchar(255) NOT NULL,
+    FOREIGN KEY (creator_user_id) REFERENCES TodoListUser(id)
+);
+ `)
+}
+const createTodoListResponsibleUserTaskRelationTable = async (): Promise<void> => {
+    await connection.raw(`
+   CREATE TABLE TodoListResponsibleUserTaskRelation (
+    task_id VARCHAR(255),
+    responsible_user_id VARCHAR(255),
+    FOREIGN KEY (task_id) REFERENCES TodoListTask(id),
+    FOREIGN KEY (responsible_user_id) REFERENCES TodoListUser(id)
+);
+ `)
+}
+const makeId = (length: number) => {
 
-const avgSalary = async (gender: string): Promise<any> => {
-  const result = await connection("Actor")
-    .avg(`salary AS average(${gender})`)
-    .where("gender", gender);
+    let result = '';
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    const charactersLength = characters.length;
+    for (let i = 0; i < length; i++) {
+        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    return result;
+}
+const createUser = async (
+    name: string,
+    nickName: string,
+    email: string,
+): Promise<boolean> => {
+    if (name === "" || nickName === "" || email === "") {
+        return false
+    } else {
+        const id = makeId(12)
+        await connection.raw(`
+           INSERT INTO TodoListUser (id,name,nickname,email)
+           VALUES ("${id}","${name}","${nickName}","${email}");
+        `)
+        return true
+    }
+}
 
-  console.log(result);
-};
+const getUserById = async (id: string): Promise<any> => {
+    const result = await connection.raw(`
+    SELECT * FROM TodoListUser WHERE id = '${id}'
+  `)
+    const user = result[0][0]
+    return user
 
-app.get("/actor", async (req: Request, res: Response) => {
-  try {
-    const count = await quantity(req.query.gender as string);
-    res.status(200).send({
-      quantity: count,
+}
+
+const updateUser = async (
+    id: string,
+    name: string,
+    nickName: string,
+): Promise<boolean> => {
+    if (name === "" || nickName === "" || id === "") {
+        return false
+    } else {
+
+        await connection.raw(`
+           UPDATE TodoListUser 
+           SET name = "${name}",nickname="${nickName}"
+           WHERE id="${id}"
+        `)
+        return true
+    }
+}
+const createTask = async (
+    title: string,
+    description: string,
+    limitDate: string,
+    creatorUserId: string,
+):Promise<boolean> => {
+    if (title === "" || description === "" || limitDate === "" || creatorUserId === "") {
+        return false
+    } else {
+        const date = limitDate;
+        const newdate = date.split("/").reverse().join("-");
+        const id = makeId(12)
+
+        await connection.raw(`
+           INSERT INTO TodoListTask (id, title, description, limit_date, creator_user_id)
+           VALUES  ("${id}","${title}","${description}","${newdate}","${creatorUserId}");
+        `)
+        return true
+    }
+}
+
+const getTaskById = async (id: string): Promise<any> => {
+    const result = await connection.raw(`
+    SELECT * FROM TodoListTask WHERE id = '${id}'
+  `)
+    const task = result[0][0]
+    return task
+
+}
+async function main(): Promise<void> {
+
+    app.put("/user", async (req: Request, res: Response) => {
+        try {
+
+            const validator = await createUser(
+                req.body.name,
+                req.body.nickName,
+                req.body.email
+            );
+            if (validator) {
+                res.status(200).send();
+            } else {
+                res.status(412).send({
+                    message: "O formulario está incompleto",
+                });
+            }
+        } catch (err) {
+            res.status(400).send({
+                message: err.message,
+            });
+        }
     });
-  } catch (err) {
-    res.status(400).send({
-      message: err.message,
-    });
-  }
-});
+    app.get("/user/:id", async (req: Request, res: Response) => {
+        try {
+            const id = req.params.id;
+            const user = await getUserById(id);
 
-app.put("/actor", async (req: Request, res: Response) => {
-  try {
-    await createActor(
-      req.body.id,
-      req.body.name,
-      req.body.salary,
-      new Date(req.body.birth_date),
-      req.body.gender
-    );
-    res.status(200).send();
-  } catch (err) {
-    res.status(400).send({
-      message: err.message,
-    });
-  }
-});
+            if (id !== "") {
+                if (user) {
+                    delete user.name;
+                    delete user.email;
+                    res.status(200).send(user)
+                } else {
+                    res.status(404).send({
+                        message: "O formulario não existe",
+                    });
+                }
 
-app.post("/actor", async (req: Request, res: Response) => {
-  try {
-    await updateSalary(req.body.salary, req.body.id);
-    res.status(200).send();
-  } catch (err) {
-    res.status(400).send({
-      message: err.message,
+            } else {
+                res.status(412).send({
+                    message: "O formulario está incompleto",
+                });
+            }
+        } catch (err) {
+            res.status(400).send({
+                message: err.message,
+            });
+        }
     });
-  }
-});
 
-app.delete("/actor/:id", async (req: Request, res: Response) => {
-  try {
-    await deleteActor(req.params.id);
-    res.status(200).send();
-  } catch (err) {
-    res.status(400).send({
-      message: err.message,
+    app.post("/user/edit", async (req: Request, res: Response) => {
+        try {
+            const validator = await updateUser(
+                req.query.id as string,
+                req.body.name,
+                req.body.nickname,
+            )
+            if (validator) {
+                res.status(200).send();
+            } else {
+                res.status(412).send({
+                    message: "O formulario está incompleto",
+                });
+            }
+        } catch (err) {
+            res.status(400).send({
+                message: err.message,
+            });
+        }
     });
-  }
-});
 
-app.post("/movie", async (req: Request, res: Response) => {
-  try {
-    await createMovie(
-      req.body.id,
-      req.body.title,
-      req.body.synopsis,
-      new Date(req.body.release_Date),
-      req.body.rating
-    );
-    res.status(200).send();
-  } catch (err) {
-    res.status(400).send({
-      message: err.message,
-    });
-  }
-});
+    app.put("/task", async (req: Request, res: Response) => {
+        try {
 
-app.get("/movie/all", async (req: Request, res: Response) => {
-  try {
-    const movie = await getAllMovies()
-    res.status(200).send(movie)
-  } catch (err) {
-    res.status(400).send({
-      message: err.message,
+            const validator = await createTask(
+                req.body.title,
+                req.body.description,
+                req.body.limitDate,
+                req.body.creatorUserId
+            );
+            if (validator) {
+                res.status(200).send();
+            } else {
+                res.status(412).send({
+                    message: "O formulario está incompleto",
+                });
+            }
+        } catch (err) {
+            res.status(400).send({
+                message: err.message,
+            });
+        }
     });
-  }
-});
 
-app.get("/movie/search", async (req: Request, res: Response) => {
-  try {
-    const movie = await getMovieByName(req.query.title as string)
-    res.status(200).send(movie)
-  } catch (err) {
-    res.status(400).send({
-      message: err.message,
+    app.get("/task/:id", async (req: Request, res: Response) => {
+        try {
+            const id = req.params.id;
+            const task = await getTaskById(id);
+
+            if (id !== "") {
+                if (task) {
+                    const date = task.limit_date.toISOString().substring(0, 10) + ""
+                    const newdate = date.split("-").reverse().join("/")
+                    task.limit_date = newdate;
+                    res.status(200).send(task)
+                } else {
+                    res.status(404).send({
+                        message: "O formulario não existe",
+                    });
+                }
+
+            } else {
+                res.status(412).send({
+                    message: "O formulario está incompleto",
+                });
+            }
+        } catch (err) {
+            res.status(400).send({
+                message: err.message,
+            });
+        }
     });
-  }
-});
+
+}
+
+const app = express();
+​
+app.use(express.json());
+
+const server = app.listen(process.env.PORT || 3000, () => {
+    if (server) {
+        const address = server.address() as AddressInfo;
+        console.log(`server is running in http://localhost:${address.port}`)
+    } else {
+        console.error("Failure upon starting server")
+    }
+})
+
+main();
