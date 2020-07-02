@@ -1,0 +1,20 @@
+{
+  "name": "POO",
+  "version": "1.0.0",
+  "module": "system",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsc && node build/index.js --target es6"
+  },
+  "author": "MarioLuzz",
+  "license": "ISC",
+  "dependencies": {
+    "moment": "^2.26.0",
+    "typescript": "^3.9.5"
+  },
+  "devDependencies": {
+    "@types/node": "^12.12.37"
+  }
+}

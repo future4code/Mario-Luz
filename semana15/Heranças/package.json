@@ -1,0 +1,14 @@
+{
+  "name": "Restaurant",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc && node build/index.js --target es6"
+  },
+  "author": "MarioLuzz",
+  "license": "MIT",
+  "dependencies": {
+    "@types/node": "^13.13.4",
+    "uuidv4": "^6.0.8"
+  }
+}
