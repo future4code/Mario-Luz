@@ -6,4 +6,4 @@ function seconsToHourString(input: number): string {
   return `${hours}h ${minutes}m ${seconds}s`
 }
 
-console.log(seconsToHourString(8000))
+console.log(seconsToHourString(3725))
